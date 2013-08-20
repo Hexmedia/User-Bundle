@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * User Entity
  *
- * @ORM\Entity(repositoryClass = "Hexmedia\UserBundle\Repository\Doctrine\UserRepository")
+ * @ORM\MappedSupperclass
  */
 abstract class User extends BaseUser
 {
