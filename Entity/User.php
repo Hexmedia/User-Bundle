@@ -8,10 +8,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * User Entity
  *
- * @ORM\Table(name = "users")
  * @ORM\Entity(repositoryClass = "Hexmedia\UserBundle\Repository\Doctrine\UserRepository")
  */
-class User extends BaseUser {
+abstract class User extends BaseUser
+{
 
 	/**
 	 * @var int
@@ -22,7 +22,8 @@ class User extends BaseUser {
 	 */
 	protected $id;
 
-	public function __construct() {
+	public function __construct()
+	{
 		parent::__construct();
 	}
 
@@ -52,7 +53,8 @@ class User extends BaseUser {
 	 *
 	 * @return integer
 	 */
-	public function getId() {
+	public function getId()
+	{
 		return $this->id;
 	}
 
