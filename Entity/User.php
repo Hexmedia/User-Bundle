@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * User Entity
  *
- * @ORM\MappedSupperclass
+ * @ORM\MappedSuperclass
  */
 abstract class User extends BaseUser
 {
