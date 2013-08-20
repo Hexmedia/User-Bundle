@@ -24,10 +24,10 @@
 	},
 	"autoload": {
 		"psr-0": {
-			"Hexmedia\\AdministratorBundle": ""
+			"Hexmedia\\UserBundle": ""
 		}
 	},
-	"target-dir": "Hexmedia/AdministratorBundle",
+	"target-dir": "Hexmedia/UserBundle",
 	"repositories": [
 		{
 			"type": "vcs",
