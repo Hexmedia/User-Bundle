@@ -1,0 +1,37 @@
+{% extends "HexmediaUserBundle::admin.html.twig" %}
+
+{% block title %}HexmediaUserBundle:Admin:edit{% endblock %}
+
+{% block body %}
+
+	{{ form_start(form, {'attr' : { 'class' : 'form-horizontal' } }) }}
+		
+		{{ form_row(form.email) }}
+
+		<div class="control-group">
+			{{ form_label(form.enabled) }}
+			<div class="controls">
+				{{ form_widget(form.enabled) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			{{ form_label(form.locked) }}
+			<div class="controls">
+				{{ form_widget(form.locked) }}
+			</div>
+		</div>
+
+
+		<div class="control-group">
+			{{ form_label(form.expired) }}
+			<div class="controls">
+				{{ form_widget(form.expired) }}
+			</div>
+		</div>
+
+		{{ form_widget(form.save, {'attr' : { 'class' : 'btn btn-primary' } }) }}
+
+	{{ form_end(form) }}
+
+{% endblock %}

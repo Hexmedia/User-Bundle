@@ -1,0 +1,22 @@
+FOSUserSecurity:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+FOSUserProfile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+FOSUserChangePassword:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile
+
+FOSUserRegister:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+FOSUserResetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+FOSUserGroup:
+    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
+    prefix: /group

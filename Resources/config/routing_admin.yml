@@ -1,0 +1,89 @@
+HexMediaUserList:
+    pattern:  /users/list/{page}/{pageSize}
+    defaults: { _controller: HexmediaUserBundle:User:list, page: 1, pageSize: 10 }
+
+HexMediaUserAdd:
+    pattern:  /users/add/
+    defaults: { _controller: HexmediaUserBundle:User:add }
+
+HexMediaUserEdit:
+    pattern:  /users/edit/{id}
+    defaults: { _controller: HexmediaUserBundle:User:edit }
+    options:
+        expose: true
+
+HexMediaUserRemove:
+    pattern: /users/remove/{id}
+    defaults: { _controller: HexmediaUserBundle:User:remove }
+    options:
+        expose: true
+
+HexMediaUserDisplay:
+    pattern: /users/{page}/{pageSize}
+    defaults: { _controller: HexmediaUserBundle:User:display, page: 1, pageSize: 10 }
+    requirements:
+        _method: GET
+
+
+HexMediaAdminLogin:
+    pattern: /login
+    defaults: { _controller: FOSUserBundle:Security:login }
+
+HexMediaAdminAdd:
+    pattern:  /admin/add/
+    defaults: { _controller: HexmediaUserBundle:Admin:add }
+    options:
+        expose: true
+
+HexMediaAdminEdit:
+    pattern:  /admin/edit/{id}
+    defaults: { _controller: HexmediaUserBundle:Admin:edit }
+    options:
+        expose: true
+
+HexMediaAdminRemove:
+    pattern: /admin/remove/{id}
+    defaults: { _controller: HexmediaUserBundle:Admin:remove, _format: ~ }
+    requirements:
+        _method: DELETE
+    options:
+        expose: true
+
+HexMediaGroups:
+    pattern: /admin/groups/{page}/{sort}/{pageSize}/{sortDirection}
+    defaults: { _controller: HexmediaUserBundle:Groups:list, page: 1, pageSize: 10, sort: id, sortDirection: ASC, _format: ~ }
+    options:
+        expose: true
+
+HexMediaGroupsEdit:
+    pattern: /admin/group/edit/{name}
+    defaults: { _controller: HexmediaUserBundle:Groups:edit, _format: ~ }
+    options:
+        expose: true
+
+HexMediaGroupsAdd:
+    pattern: /admin/group/add
+    defaults: { _controller: HexmediaUserBundle:Groups:add }
+    options:
+        expose: true
+
+HexMediaGroupsRemove:
+    pattern: /admin/group/remove/{name}
+    defaults: { _controller: HexmediaUserBundle:Groups:remove, _format: ~ }
+    options:
+        expose: true
+
+HexMediaAdmin:
+    pattern: /admin/{page}/{sort}/{pageSize}/{sortDirection}
+    defaults: { _controller: HexmediaUserBundle:Admin:list, page: 1, pageSize: 10, sort: id, sortDirection: ASC, _format: ~ }
+    requirements:
+        _method: GET
+        page: "[1-9]?[0-9]*"
+        pageSize: "[1-9]?[0-9]*"
+    options:
+        expose: true
+
+
+FOSUserGroup:
+    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
+    prefix: /group
