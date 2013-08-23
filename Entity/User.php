@@ -2,15 +2,16 @@
 
 namespace Hexmedia\UserBundle\Entity;
 
-use FOS\UserBundle\Entity\User as BaseUser;
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * User Entity
  *
- * @ORM\MappedSuperclass
+ * @ORM\Table(name = "user_base")
+ * @ORM\Entity(repositoryClass = "Hexmedia\UserBundle\Repository\Doctrine\UserRepository")
  */
-abstract class User extends BaseUser
+class User extends BaseUser
 {
 
 	/**

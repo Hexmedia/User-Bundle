@@ -13,7 +13,8 @@ use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Hexmedia\UserBundle\Form\UserType;
 use Hexmedia\AdministratorBundle\ControllerInterface\BreadcrumbsInterface;
 
-class AdminController extends RestController implements ListControllerInterface, BreadcrumbsInterface {
+class AdminController extends RestController implements ListControllerInterface, BreadcrumbsInterface
+{
 
 	/**
 	 * @var WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs
@@ -24,7 +25,8 @@ class AdminController extends RestController implements ListControllerInterface,
 	 *
 	 * @return WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs
 	 */
-	public function registerBreadcrubms() {
+	public function registerBreadcrubms()
+	{
 		$this->breadcrumbs = $this->get("white_october_breadcrumbs");
 
 		$this->breadcrumbs->addItem("Administrators", $this->get('router')->generate('HexMediaAdmin'));
@@ -36,16 +38,18 @@ class AdminController extends RestController implements ListControllerInterface,
 	 *
 	 * @Rest/View
 	 */
-	public function addAction() {
+	public function addAction()
+	{
 		return array();
 	}
 
 	/**
 	 * @Template()
 	 */
-	public function editAction($id) {
+	public function editAction($id)
+	{
 		$this->registerBreadcrubms()
-			->addItem("Edit");
+				->addItem("Edit");
 
 		$em = $this->getDoctrine()->getManager();
 		/**
@@ -76,7 +80,8 @@ class AdminController extends RestController implements ListControllerInterface,
 	/**
 	 * @Rest\View
 	 */
-	public function listAction($page = 1, $pageSize = 10, $sort = 'id', $sortDirection = "ASC") {
+	public function listAction($page = 1, $pageSize = 10, $sort = 'id', $sortDirection = "ASC")
+	{
 		$this->registerBreadcrubms();
 		$em = $this->getDoctrine()->getManager();
 		/**
@@ -95,11 +100,11 @@ class AdminController extends RestController implements ListControllerInterface,
 		$i = ($page - 1) * $pageSize + 1;
 		foreach ($items as $item) {
 			$arr['items'][] = array(
-				'id' => $item->get('id'),
+				'id' => $item->getId(),
 				'number' => $i,
-				'email' => $item->get('email'),
-				'lastLogin' => ($item->get('lastLogin') ? $item->get('lastLogin')->format("Y-m-d H:i:s") : $this->get('translator')->trans('Never')),
-				'locked' => $item->get('locked')
+				'email' => $item->getEmail(),
+				'lastLogin' => ($item->getLastLogin() ? $item->getLastLogin()->format("Y-m-d H:i:s") : $this->get('translator')->trans('Never')),
+				'locked' => $item->isLocked()
 			);
 		}
 
@@ -115,7 +120,8 @@ class AdminController extends RestController implements ListControllerInterface,
 	 *
 	 * @Rest\View
 	 */
-	public function removeAction($id) {
+	public function removeAction($id)
+	{
 		$em = $this->getDoctrine()->getManager();
 
 		$repository = $em->getRepository('HexmediaUserBundle:User');

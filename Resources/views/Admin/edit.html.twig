@@ -5,30 +5,30 @@
 {% block body %}
 
 	{{ form_start(form, {'attr' : { 'class' : 'form-horizontal' } }) }}
-		
+
 		{{ form_row(form.email) }}
 
-		<div class="control-group">
+<div class="form-group">
 			{{ form_label(form.enabled) }}
-			<div class="controls">
+	<div class="controls">
 				{{ form_widget(form.enabled) }}
-			</div>
-		</div>
+	</div>
+</div>
 
-		<div class="control-group">
+<div class="form-group">
 			{{ form_label(form.locked) }}
-			<div class="controls">
+	<div class="controls">
 				{{ form_widget(form.locked) }}
-			</div>
-		</div>
+	</div>
+</div>
 
 
-		<div class="control-group">
+<div class="form-group">
 			{{ form_label(form.expired) }}
-			<div class="controls">
+	<div class="controls">
 				{{ form_widget(form.expired) }}
-			</div>
-		</div>
+	</div>
+</div>
 
 		{{ form_widget(form.save, {'attr' : { 'class' : 'btn btn-primary' } }) }}
 

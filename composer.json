@@ -16,8 +16,7 @@
 	"require": {
 		"php": ">=5.3.2",
 		"symfony/framework-bundle": ">=2.3",
-		"twig/twig": ">=1.13",
-		"hexmedia/administrator-bundle": "dev-master"
+		"twig/twig": ">=1.13"
 	},
 	"required-dev": {
 		"twig/twig": "@stable"
@@ -27,11 +26,5 @@
 			"Hexmedia\\UserBundle": ""
 		}
 	},
-	"target-dir": "Hexmedia/UserBundle",
-	"repositories": [
-		{
-			"type": "vcs",
-			"url": "git@gitlab.hexmedia.pl:symfony-2/administrator-bundle.git"
-		}
-	]
+	"target-dir": "Hexmedia/UserBundle"
 }
