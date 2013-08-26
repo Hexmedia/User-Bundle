@@ -4,7 +4,6 @@ namespace Hexmedia\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Hexmedia\UserBundle\Entity\User;
-use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * UserAddress Entity
@@ -12,16 +11,8 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @ORM\Table(name = "user_address")
  * @ORM\Entity(repositoryClass = "Hexmedia\UserBundle\Repository\Doctrine\UserRepository")
  */
-class UserAddress {
-
-	/**
-	 * Default locale
-	 *
-	 * @var string
-	 *
-	 * @Gedmo\Locale
-	 */
-	private $locale = 'pl';
+class UserAddress
+{
 
 	/**
 	 * @var integer
@@ -36,7 +27,6 @@ class UserAddress {
 	 * @var string
 	 *
 	 * @ORM\Column(name="name", type="string", length=255)
-	 * @Gedmo\Translatable
 	 */
 	private $name;
 
@@ -44,7 +34,6 @@ class UserAddress {
 	 * @var string
 	 *
 	 * @ORM\Column(name="country", type="string", length=255)
-	 * @Gedmo\Translatable
 	 */
 	private $country;
 
@@ -52,7 +41,6 @@ class UserAddress {
 	 * @var string
 	 *
 	 * @ORM\Column(name="region", type="string", length=255)
-	 * @Gedmo\Translatable
 	 */
 	private $region;
 
@@ -60,7 +48,6 @@ class UserAddress {
 	 * @var string
 	 *
 	 * @ORM\Column(name="city", type="string", length=255)
-	 * @Gedmo\Translatable
 	 */
 	private $city;
 
@@ -68,7 +55,6 @@ class UserAddress {
 	 * @var string
 	 *
 	 * @ORM\Column(name="street", type="string", length=255)
-	 * @Gedmo\Translatable
 	 */
 	private $street;
 
@@ -83,7 +69,6 @@ class UserAddress {
 	 * @var string
 	 *
 	 * @ORM\Column(name="local", type="string", length=255)
-	 * @Gedmo\Translatable
 	 */
 	private $local;
 
@@ -91,7 +76,6 @@ class UserAddress {
 	 * @var \DateTime
 	 *
 	 * @ORM\Column(name="created", type="datetime")
-	 * @Gedmo\Timestampable(on="create")
 	 *
 	 */
 	private $created;
@@ -100,7 +84,6 @@ class UserAddress {
 	 * @var \DateTime
 	 *
 	 * @ORM\Column(name="modified", type="datetime")
-	 * @Gedmo\Timestampable(on="update")
 	 */
 	private $modified;
 
@@ -116,7 +99,8 @@ class UserAddress {
 	 *
 	 * @return integer
 	 */
-	public function getId() {
+	public function getId()
+	{
 		return $this->id;
 	}
 
@@ -126,7 +110,8 @@ class UserAddress {
 	 * @param string $name
 	 * @return UserAddress
 	 */
-	public function setName($name) {
+	public function setName($name)
+	{
 		$this->name = $name;
 
 		return $this;
@@ -137,7 +122,8 @@ class UserAddress {
 	 *
 	 * @return string
 	 */
-	public function getName() {
+	public function getName()
+	{
 		return $this->name;
 	}
 
@@ -147,7 +133,8 @@ class UserAddress {
 	 * @param string $country
 	 * @return UserAddress
 	 */
-	public function setCountry($country) {
+	public function setCountry($country)
+	{
 		$this->country = $country;
 
 		return $this;
@@ -158,7 +145,8 @@ class UserAddress {
 	 *
 	 * @return string
 	 */
-	public function getCountry() {
+	public function getCountry()
+	{
 		return $this->country;
 	}
 
@@ -168,7 +156,8 @@ class UserAddress {
 	 * @param string $region
 	 * @return UserAddress
 	 */
-	public function setRegion($region) {
+	public function setRegion($region)
+	{
 		$this->region = $region;
 
 		return $this;
@@ -179,7 +168,8 @@ class UserAddress {
 	 *
 	 * @return string
 	 */
-	public function getRegion() {
+	public function getRegion()
+	{
 		return $this->region;
 	}
 
@@ -189,7 +179,8 @@ class UserAddress {
 	 * @param string $city
 	 * @return UserAddress
 	 */
-	public function setCity($city) {
+	public function setCity($city)
+	{
 		$this->city = $city;
 
 		return $this;
@@ -200,7 +191,8 @@ class UserAddress {
 	 *
 	 * @return string
 	 */
-	public function getCity() {
+	public function getCity()
+	{
 		return $this->city;
 	}
 
@@ -210,7 +202,8 @@ class UserAddress {
 	 * @param string $street
 	 * @return UserAddress
 	 */
-	public function setStreet($street) {
+	public function setStreet($street)
+	{
 		$this->street = $street;
 
 		return $this;
@@ -221,7 +214,8 @@ class UserAddress {
 	 *
 	 * @return string
 	 */
-	public function getStreet() {
+	public function getStreet()
+	{
 		return $this->street;
 	}
 
@@ -231,7 +225,8 @@ class UserAddress {
 	 * @param string $house
 	 * @return UserAddress
 	 */
-	public function setHouse($house) {
+	public function setHouse($house)
+	{
 		$this->house = $house;
 
 		return $this;
@@ -242,7 +237,8 @@ class UserAddress {
 	 *
 	 * @return string
 	 */
-	public function getHouse() {
+	public function getHouse()
+	{
 		return $this->house;
 	}
 
@@ -252,7 +248,8 @@ class UserAddress {
 	 * @param string $local
 	 * @return UserAddress
 	 */
-	public function setLocal($local) {
+	public function setLocal($local)
+	{
 		$this->local = $local;
 
 		return $this;
@@ -263,7 +260,8 @@ class UserAddress {
 	 *
 	 * @return string
 	 */
-	public function getLocal() {
+	public function getLocal()
+	{
 		return $this->local;
 	}
 
@@ -273,7 +271,8 @@ class UserAddress {
 	 * @param \DateTime $created
 	 * @return UserBillingData
 	 */
-	public function setCreated($created) {
+	public function setCreated($created)
+	{
 		$this->created = $created;
 
 		return $this;
@@ -284,7 +283,8 @@ class UserAddress {
 	 *
 	 * @return \DateTime
 	 */
-	public function getCreated() {
+	public function getCreated()
+	{
 		return $this->created;
 	}
 
@@ -294,7 +294,8 @@ class UserAddress {
 	 * @param \DateTime $modified
 	 * @return UserBillingData
 	 */
-	public function setModified($modified) {
+	public function setModified($modified)
+	{
 		$this->modified = $modified;
 
 		return $this;
@@ -305,7 +306,8 @@ class UserAddress {
 	 *
 	 * @return \DateTime
 	 */
-	public function getModified() {
+	public function getModified()
+	{
 		return $this->modified;
 	}
 
@@ -315,7 +317,8 @@ class UserAddress {
 	 * @param User $user
 	 * @return UserAddress
 	 */
-	public function setUser(User $user) {
+	public function setUser(User $user)
+	{
 		$this->user = $user;
 
 		return $this;
@@ -326,7 +329,8 @@ class UserAddress {
 	 *
 	 * @return User
 	 */
-	public function getUser() {
+	public function getUser()
+	{
 		return $this->user;
 	}
 
@@ -336,9 +340,11 @@ class UserAddress {
 	 * @param string $locale
 	 * @return Product
 	 */
-	public function setTranslatableLocale($locale) {
+	public function setTranslatableLocale($locale)
+	{
 		$this->locale = $locale;
 		return $this;
 	}
 
 }
+
