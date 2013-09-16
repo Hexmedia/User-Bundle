@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexmedia\UserBundle\Form;
+namespace Hexmedia\UserBundle\Form\Type\User;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
