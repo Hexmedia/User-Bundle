@@ -2,6 +2,7 @@
 
 namespace Hexmedia\UserBundle\DependencyInjection;
 
+use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -23,6 +24,14 @@ class HexmediaUserExtension extends Extension {
 
 		$loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
 		$loader->load('services.yml');
+
+        $processor = new Processor();
+
+        $config = $processor->process($configuration->getConfigTreeBuilder()->buildTree(), $configs);
+
+        if (isset($config['class'])) {
+            $container->setParameter("hexmedia_user_class", $config['class']);
+        }
 	}
 
 }

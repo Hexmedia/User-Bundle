@@ -1,2 +1,8 @@
 parameters:
 #    hexmedia_admin.example.class: Hexmedia\UserBundle\Example
+
+
+services:
+  hexmedia_user.discriminator:
+    class: Hexmedia\UserBundle\EventListener\DiscriminatorListener
+    arguments: [%hexmedia_user_class%]
