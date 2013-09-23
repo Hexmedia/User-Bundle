@@ -11,9 +11,6 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name = "user_base")
  * @ORM\Entity(repositoryClass = "Hexmedia\UserBundle\Repository\Doctrine\UserRepository")
  *
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="type", type="string")
- * @ORM\DiscriminatorMap({"users_base" = "Hexmedia\UserBundle\Entity\User"})
  */
 class User extends BaseUser
 {

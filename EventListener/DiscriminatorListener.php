@@ -4,6 +4,7 @@ namespace Hexmedia\UserBundle\EventListener;
 
 use Doctrine\ORM\Event\LoadClassMetadataEventArgs;
 use Doctrine\Common\Annotations\AnnotationReader;
+use Doctrine\ORM\Mapping\ClassMetadataInfo;
 
 /**
  * Listens to loadClassMetadata event and sets
@@ -47,7 +48,10 @@ class DiscriminatorListener
             }
 
             $discriminatorMap['users'] = $this->className;
+            $discriminatorMap['users_base'] = "Hexmedia\\UserBundle\\Entity\\User";
 
+            $metadata->setDiscriminatorColumn(["name" => "type", "length" => 255]);
+            $metadata->setInheritanceType(ClassMetadataInfo::INHERITANCE_TYPE_SINGLE_TABLE);
             $metadata->setDiscriminatorMap($discriminatorMap);
 
         }
