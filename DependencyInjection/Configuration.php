@@ -22,7 +22,7 @@ class Configuration implements ConfigurationInterface
         $rootNode = $treeBuilder->root('hexmedia_user');
 
         $rootNode->children()
-            ->scalarNode("class")->isRequired()->end()
+            ->scalarNode("class")->end()
             ->end();
 
 
