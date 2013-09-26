@@ -17,7 +17,7 @@ class DiscriminatorListener
     /**
      * Constructor
      *
-     * @param array $discriminatorMap
+     * @param $className
      */
     public function __construct($className)
     {
@@ -38,7 +38,7 @@ class DiscriminatorListener
             $class = new \ReflectionClass($metadata->getName());
         }
 
-        if ($class->getName() == "Hexmedia\\UserBundle\\Entity\\User") {
+        if ($this->className && $class->getName() == "Hexmedia\\UserBundle\\Entity\\User") {
             $reader = new AnnotationReader();
             $discriminatorMap = [];
             $discriminatorMapAnnotation = $reader->getClassAnnotation($class, 'Doctrine\ORM\Mapping\DiscriminatorMap');

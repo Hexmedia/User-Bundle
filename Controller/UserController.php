@@ -8,13 +8,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class UserController extends Controller {
 
 	/**
-	 * @var WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs
+	 * @var \WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs
 	 */
 	private $breadcrumbs;
 
 	/**
 	 *
-	 * @return WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs
+	 * @return \WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs
 	 */
 	private function registerBreadcrumbs() {
 		$this->breadcrumbs = $this->get("white_october_breadcrumbs");

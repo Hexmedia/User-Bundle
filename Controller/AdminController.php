@@ -17,13 +17,13 @@ class AdminController extends RestController implements ListControllerInterface,
 {
 
 	/**
-	 * @var WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs
+	 * @var \WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs
 	 */
 	private $breadcrumbs;
 
 	/**
 	 *
-	 * @return WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs
+	 * @return \WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs
 	 */
 	public function registerBreadcrubms()
 	{
@@ -53,7 +53,7 @@ class AdminController extends RestController implements ListControllerInterface,
 
 		$em = $this->getDoctrine()->getManager();
 		/**
-		 * @var Hexmedia\UserBundle\Repository\UserRepository
+		 * @var \Hexmedia\UserBundle\Repository\UserRepository
 		 */
 		$repository = $em->getRepository('HexmediaUserBundle:User');
 

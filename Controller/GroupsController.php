@@ -13,13 +13,13 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 class GroupsController extends RestController implements ListControllerInterface {
 
 	/**
-	 * @var WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs
+	 * @var \WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs
 	 */
 	private $breadcrumbs;
 
 	/**
 	 *
-	 * @return WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs
+	 * @return \WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs
 	 */
 	private function registerBreadcrumbs() {
 		$this->breadcrumbs = $this->get("white_october_breadcrumbs");
@@ -45,7 +45,7 @@ class GroupsController extends RestController implements ListControllerInterface
 
 		$em = $this->getDoctrine()->getManager();
 		/**
-		 * @var Hexmedia\UserBundle\Repository\UserRepository
+		 * @var \Hexmedia\UserBundle\Repository\UserRepository
 		 */
 		$repository = $em->getRepository('HexmediaUserBundle:Group');
 

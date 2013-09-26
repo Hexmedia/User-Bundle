@@ -31,6 +31,8 @@ class HexmediaUserExtension extends Extension {
 
         if (isset($config['class'])) {
             $container->setParameter("hexmedia_user_class", $config['class']);
+        } else {
+            $container->setParameter("hexmedia_user_class", null);
         }
 	}
 
