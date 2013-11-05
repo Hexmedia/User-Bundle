@@ -12,17 +12,20 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass = "Hexmedia\UserBundle\Repository\Doctrine\UserRepository")
  *
  */
-class User extends BaseUser
-{
+class User extends BaseUser {
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
+	/**
+	 * @var int
+	 *
+	 * @ORM\Column(name="id", type="integer")
+	 * @ORM\Id
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	protected $id;
+
+	public function getName() {
+		return $this->getUsername();
+	}
 
 //    /**
 //     * @var string
@@ -51,8 +54,6 @@ class User extends BaseUser
 //    {
 //        return $this->type;
 //    }
-
-
 //	public function getSlug() {
 //		return $this->getEmailCanonical();
 //	}
@@ -74,15 +75,13 @@ class User extends BaseUser
 //		return $this->getEmailCanonical();
 //	}
 
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+	/**
+	 * Get id
+	 *
+	 * @return integer
+	 */
+	public function getId() {
+		return $this->id;
+	}
 
 }
-
