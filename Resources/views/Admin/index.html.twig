@@ -1,0 +1,7 @@
+{% extends "HexmediaAdministratorBundle::admin.html.twig" %}
+
+{% block title %}{{ "User's list"|trans }}{% endblock %}
+
+{% block body %}
+    {{ render(controller('HexmediaUserBundle:Admin:list', {page:page})) }}
+{% endblock %}

@@ -6,3 +6,8 @@ services:
   hexmedia_user.discriminator:
     class: Hexmedia\UserBundle\EventListener\DiscriminatorListener
     arguments: [%hexmedia_user_class%]
+  hexmedia_user.menu.subscriber:
+    class: Hexmedia\UserBundle\Menu\Subscriber
+    arguments: [ "@translator" ]
+    tags:
+      - { name: kernel.event_subscriber }

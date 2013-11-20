@@ -1,15 +1,25 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: krun
- * Date: 16.09.13
- * Time: 15:17
- * To change this template use File | Settings | File Templates.
- */
 
 namespace Hexmedia\UserBundle\Form\Type\User;
 
+use Symfony\Component\Form\FormBuilderInterface;
 
-class AddType {
+class AddType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options) {
+        parent::buildForm($builder, $options);
+        $this->addAddNextButton($builder);
+    }
+
+
+    /**
+     * Returns the name of this type.
+     *
+     * @return string The name of this type
+     */
+    public function getName()
+    {
+        return "content_page_type_add";
+    }
 
 }
