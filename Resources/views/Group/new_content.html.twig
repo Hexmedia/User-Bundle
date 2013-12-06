@@ -1,8 +1,0 @@
-{% trans_default_domain 'FOSUserBundle' %}
-
-<form action="{{ path('HexMediaGroupsAdd') }}" {{ form_enctype(form) }} method="POST" class="form-horizontal">
-    {{ form_widget(form) }}
-		<div>
-			<input type="submit" class="btn btn-primary" value="{{ 'group.new.submit'|trans }}" />
-		</div>
-	</form>

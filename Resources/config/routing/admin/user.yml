@@ -1,0 +1,21 @@
+HexMediaUserAdd:
+    pattern:  /add/
+    defaults: { _controller: HexmediaUserBundle:AdminUser:add }
+    options:
+        expose: true
+
+HexMediaUserEdit:
+    pattern:  /edit/{id}
+    defaults: { _controller: HexmediaUserBundle:AdminUser:edit }
+    options:
+        expose: true
+
+HexMediaUserDelete:
+    pattern: /delete/{id}
+    defaults: { _controller: HexmediaUserBundle:AdminUser:delete }
+    options:
+        expose: true
+
+HexMediaUser:
+    pattern: /{page}/{sort}/{direction}
+    defaults: { _controller: HexmediaUserBundle:AdminUser:index, page: 1, sort: obj.lastLogin, direction: 'asc' }

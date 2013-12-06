@@ -10,7 +10,7 @@ use Hexmedia\AdministratorBundle\Menu\Event as MenuEvent;
 class Subscriber extends SubscriberAbstract implements EventSubscriberInterface {
 
 	public function addPositions(MenuEvent $event) {
-//		$users = $event->getMenu()->addChild($this->translator->trans("Users"), array('route' => 'HexMediaUser', 'id' => 'HexMediaUser'))->setAttribute('icon', 'icon-user');
+		return $event->getMenu()->addChild($this->translator->trans("Users"), array('route' => 'HexMediaUser', 'id' => 'HexMediaUser'))->setAttribute('icon', 'fa fa-users');
 	}
 
 	public static function getSubscribedEvents() {
