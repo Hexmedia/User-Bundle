@@ -2,4 +2,3 @@
 <td>{% if entity.enabled %}{{ 'yes'|trans }}{% else %}{{ 'no'|trans }}{% endif %}</td>
 <td>{% if entity.locked %}{{ 'yes'|trans }}{% else %}{{ 'no'|trans }}{% endif %}</td>
 <td>{% if entity.lastLogin %}{{ entity.lastLogin|simple_time_formatter }}{% else %}{{ 'never'|trans }}{% endif %}</td>
-<td>{{ entity.fullName }}</td>

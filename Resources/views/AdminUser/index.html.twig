@@ -3,5 +3,5 @@
 {% block title %}{{ "User's list"|trans }}{% endblock %}
 
 {% block body %}
-    {{ render(controller('HexmediaUserBundle:AdminUser:list', {page:page})) }}
+    {{ render(controller('HexmediaUserBundle:AdminUser:list', {page:page,sort:sort,direction:direction})) }}
 {% endblock %}
