@@ -16,6 +16,10 @@ HexMediaUserDelete:
     options:
         expose: true
 
+HexMediaUserUser:
+    pattern: /{page}/{sort}/{direction}
+    defaults: { _controller: HexmediaUserBundle:AdminUser:index, page: 1, sort: obj.lastLogin, direction: 'asc' }
+    
 HexMediaUser:
     pattern: /{page}/{sort}/{direction}
     defaults: { _controller: HexmediaUserBundle:AdminUser:index, page: 1, sort: obj.lastLogin, direction: 'asc' }

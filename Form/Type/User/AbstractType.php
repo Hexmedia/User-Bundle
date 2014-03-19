@@ -6,7 +6,7 @@ use Hexmedia\AdministratorBundle\Form\Type\CrudType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class UserType extends CrudType
+class AbstractType extends CrudType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
