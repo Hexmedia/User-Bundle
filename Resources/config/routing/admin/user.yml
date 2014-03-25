@@ -13,13 +13,14 @@ HexMediaUserEdit:
 HexMediaUserDelete:
     pattern: /delete/{id}
     defaults: { _controller: HexmediaUserBundle:AdminUser:delete }
+    methods: [ POST, PUT, DELETE, GET ]
     options:
         expose: true
 
 HexMediaUserUser:
     pattern: /{page}/{sort}/{direction}
     defaults: { _controller: HexmediaUserBundle:AdminUser:index, page: 1, sort: obj.lastLogin, direction: 'asc' }
-    
+
 HexMediaUser:
     pattern: /{page}/{sort}/{direction}
     defaults: { _controller: HexmediaUserBundle:AdminUser:index, page: 1, sort: obj.lastLogin, direction: 'asc' }

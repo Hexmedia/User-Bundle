@@ -13,7 +13,7 @@ var GroupsListModel;
 		};
 		columns[1] = {
 			"name": "name",
-			"display": Translator.get("Name"),
+			"display": Translator.trans("Name"),
 			"type": "text",
 			"sortable": true
 		};
@@ -41,7 +41,7 @@ var GroupsListModel;
 					dataType: "json",
 					type: "DELETE",
 					success: function(response) {
-						alerts.displaySuccess(Translator.get("Succesfully removed."), 3);
+						alerts.displaySuccess(Translator.trans("Succesfully removed."), 3);
 						glm.getData();
 					},
 					error: function(a, b, errorMessage, d) {

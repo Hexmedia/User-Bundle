@@ -12,19 +12,19 @@ var AdminListModel;
 		};
 		columns[1] = {
 			"name": "email",
-			"display": Translator.get("Email"),
+			"display": Translator.trans("Email"),
 			"type": "email",
 			"sortable": true
 		};
 		columns[2] = {
 			"name": "lastLogin",
-			"display": Translator.get("Last Login"),
+			"display": Translator.trans("Last Login"),
 			"type": "date",
 			"sortable": true
 		};
 		columns[3] = {
 			"name": "locked",
-			"display": Translator.get("Locked"),
+			"display": Translator.trans("Locked"),
 			"type": "bool",
 			"sortable": false
 		};
@@ -49,7 +49,7 @@ var AdminListModel;
 					dataType: "json",
 					type: "DELETE",
 					success: function(response) {
-						alerts.displaySuccess(Translator.get("Succesfully removed."), 3);
+						alerts.displaySuccess(Translator.trans("Succesfully removed."), 3);
 						alm.getData();
 					},
 					error: function(a, b, errorMessage, d) {
